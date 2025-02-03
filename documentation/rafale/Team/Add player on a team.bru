@@ -1,0 +1,17 @@
+meta {
+  name: Add player on a team
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:6000/api/team/667ac48425d747ee8109491b/player
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "ouii"
+  }
+}

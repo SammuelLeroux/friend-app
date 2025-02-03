@@ -1,0 +1,19 @@
+meta {
+  name: Update team
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:6000/api/team/667ac48425d747ee8109491b
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "IdUser": "6679848642ffe25cfab00b03",
+    "TeamName": "Les Boss",
+    "Names": ["Alice", "Bob", "Charlie"]
+  }
+}

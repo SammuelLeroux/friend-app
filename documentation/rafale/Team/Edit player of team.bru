@@ -1,0 +1,17 @@
+meta {
+  name: Edit player of team
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:6000/api/team/66c34f0e731164ab2139b722/player/Bob
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "nouveauNomDuJoueur"
+  }
+}

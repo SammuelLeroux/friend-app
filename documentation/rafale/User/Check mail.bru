@@ -1,0 +1,17 @@
+meta {
+  name: Check mail
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:6000/api/mail
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "test@gmail.com"
+  }
+}

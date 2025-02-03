@@ -1,0 +1,18 @@
+meta {
+  name: Create quizz
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6000/api/quizz
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Type": "type de votre quizz ici",
+    "Sentence": "phrase de votre quizz ici"
+  }
+}

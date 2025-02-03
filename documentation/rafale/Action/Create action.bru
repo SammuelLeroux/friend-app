@@ -1,0 +1,22 @@
+meta {
+  name: Create action
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6000/api/action
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Question": "Bonjour ?",
+    "CorrectAnswer": "Salut",
+    "WrongAnswer": [
+      "Non",
+      "Woaw"
+    ]
+  }
+}

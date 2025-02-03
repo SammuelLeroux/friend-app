@@ -1,0 +1,21 @@
+meta {
+  name: Create user
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6000/api/user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "test",
+    "email": "test@gmail.com",
+    "password": "test",
+    "prenium": false,
+    "phone": "0102030405"
+  }
+}

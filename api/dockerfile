@@ -1,0 +1,14 @@
+FROM golang:1.22
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+# install and clean depancies
+RUN go mod tidy
+
+# build my api
+RUN go build -o main .
+
+# run my api
+CMD ["go", "run", "main.go"]

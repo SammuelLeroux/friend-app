@@ -1,0 +1,35 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  backend_test:
+    name: Backend Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: '1.22'
+
+    - name: Install dependencies
+      run: go mod tidy
+      working-directory: ./api
+
+    - name: Run tests if test directory exists
+      run: |
+        if [ -d "./api/test" ]; then
+          go test ./api/test/...
+        else
+          echo "No test directory found, skipping tests."
+        fi

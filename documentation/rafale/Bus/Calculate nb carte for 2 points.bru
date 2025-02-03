@@ -1,0 +1,20 @@
+meta {
+  name: Calculate nb carte for 2 points
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:6000/api/bus
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Latitude1": 48.573405,
+    "Longitude1": 7.75211,
+    "Latitude2": 12.573405,
+    "Longitude2": 5.75211
+  }
+}

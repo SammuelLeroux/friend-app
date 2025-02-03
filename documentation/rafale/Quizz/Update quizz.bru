@@ -1,0 +1,18 @@
+meta {
+  name: Update quizz
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:6000/api/quizz/667ac51325d747ee8109491c
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Type": "question",
+    "Sentence": "Une question !"
+  }
+}

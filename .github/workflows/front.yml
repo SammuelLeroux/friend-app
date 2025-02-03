@@ -1,0 +1,87 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  flutter_test:
+    name: Flutter Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.22.2'
+        
+    - name: Create .env file
+      working-directory: rafale
+      run: |
+        echo "API_KEY=YOUR_API_KEY" > .env
+        echo "OTHER_SECRET=YOUR_OTHER_SECRET" >> .env
+
+    - name: Install dependencies
+      working-directory: rafale
+      run: flutter pub get
+
+    - name: Check for outdated dependencies
+      working-directory: rafale
+      run: flutter pub outdated
+
+    - name: Run analyze
+      working-directory: rafale
+      run: flutter analyze
+
+    - name: Build APK
+      working-directory: rafale
+      run: flutter build apk --release
+
+    - name: Run tests
+      working-directory: rafale
+      run: |
+        if [ -d "test" ]; then
+          flutter test
+        else
+          echo "No tests to run"
+        fi
+
+  build_appbundle:
+    name: Build Flutter Release
+    runs-on: ubuntu-latest
+    needs: [flutter_test]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.22.2'
+
+    - name: Create .env file
+      working-directory: rafale
+      run: |
+        echo "API_KEY=YOUR_API_KEY" > lib/screens/game/BlindTest/.env
+        echo "OTHER_SECRET=YOUR_OTHER_SECRET" >> lib/screens/game/BlindTest/.env
+      
+    - name: Install dependencies
+      working-directory: rafale
+      run: flutter pub get
+
+    - name: Check for outdated dependencies
+      working-directory: rafale
+      run: flutter pub outdated
+    
+    - name: Clean build
+      working-directory: rafale
+      run: flutter clean
+    
+    - name: Build APK
+      working-directory: rafale
+      run: flutter build apk --debug

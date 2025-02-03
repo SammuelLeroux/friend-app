@@ -1,0 +1,22 @@
+meta {
+  name: Update action
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:6000/api/action/667ac59f25d747ee8109491d
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Question": "zzzz ?",
+    "CorrectAnswer": "svsvsvs",
+    "WrongAnswer": [
+      "464644",
+      "vsvsvs"
+    ]
+  }
+}

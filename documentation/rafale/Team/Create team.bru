@@ -1,0 +1,19 @@
+meta {
+  name: Create team
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:6000/api/team
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "IdUser": "6679848642ffe25cfab00b03",
+    "TeamName": "lalalal",
+    "Names": ["1", "2", "3"]
+  }
+}

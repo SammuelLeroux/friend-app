@@ -1,0 +1,59 @@
+name: rafale
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.4.3 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_dotenv: ^5.0.2
+  audioplayers: ^6.0.0
+  playing_cards: ^0.4.1+11
+  shared_preferences: ^2.0.6
+  volume_control: ^0.1.5
+  just_audio: ^0.9.22
+  flutter_cache_manager: ^3.3.1
+  font_awesome_flutter: ^10.1.0
+  provider: ^6.0.0
+  flutter_svg: ^1.0.0
+  flutter_secure_storage: ^9.2.2
+  jwt_decoder: ^2.0.1
+  flutter_typeahead: ^4.6.2
+  geolocator: ^12.0.0
+  geolocator_android: 4.5.5
+  flutter_paypal_payment: ^1.0.6
+  lottie: ^3.0.0
+  jwt_decode: ^0.3.1
+  dice_icons: ^0.1.7
+
+  http: any
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - lib/assets/audio/
+    - lib/assets/logoBlindTest.png
+    - lib/assets/logoRafale.png
+    - lib/assets/RAFALE.gif
+    - lib/assets/logo.png
+    - lib/assets/background.png
+    - lib/assets/purplehome.png
+    - lib/assets/blindtest.png
+    - lib/assets/newpurple.png
+    - lib/assets/le21.png
+    - lib/assets/le99.png
+    - lib/assets/magienoir.png
+    - lib/assets/pmu.png
+    - lib/assets/bottleRed.png
+    - lib/assets/bottleYellow.png
+    - lib/assets/bottlePink.png
+    - lib/assets/bottleBlue.png
+    - lib/assets/damier.png
+    - .env

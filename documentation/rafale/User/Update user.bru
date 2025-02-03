@@ -1,0 +1,21 @@
+meta {
+  name: Update user
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:6000/api/user/668c03b717bac3805fff5ad6
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Matthieu",
+    "email": "mroess365@gmail.com",
+    "password": "matthieu1234",
+    "prenium": true,
+    "phone": "015446441611"
+  }
+}
